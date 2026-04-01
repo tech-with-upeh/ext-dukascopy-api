@@ -47,7 +47,7 @@ app.get('/api/historical', async (req: any, res: any) => {
                 from: fromDate,
                 to: toDate
             },
-            timeframe: "h1",
+            timeframe: "m1",
             format: "json",
             priceType: "bid",
         };
