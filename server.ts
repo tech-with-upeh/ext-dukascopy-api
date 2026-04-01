@@ -52,9 +52,9 @@ app.get('/api/historical', async (req: any, res: any) => {
             priceType: "bid",
         };
 
-        // Race against a 15-second timeout to avoid indefinite hangs
+        // Race against a 25-second timeout to avoid indefinite hangs
         const timeoutPromise = new Promise<never>((_, reject) =>
-            setTimeout(() => reject(new Error('Dukascopy request timed out after 15s')), 15000)
+            setTimeout(() => reject(new Error('Dukascopy request timed out after 25s')), 25000)
         );
 
         const data = await Promise.race([getHistoricalRates(config), timeoutPromise]);
