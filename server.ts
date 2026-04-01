@@ -38,8 +38,8 @@ app.get('/api/historical', async (req: any, res: any) => {
 
         // Use h1 (hourly) with a tight ±2h window so we always hit the right candle
         // regardless of what time of day the transaction happened — and it's fast.
-        const fromDate = new Date(tsInMs - 1 * 60 * 60 * 1000); // 2 hours before
-        const toDate   = new Date(tsInMs + 1 * 60 * 60 * 1000); // 2 hours after
+        const fromDate = new Date(tsInMs - 1  * 60 * 1000); // 2 hours before
+        const toDate   = new Date(tsInMs + 1 * 60 * 1000); // 2 hours after
 
         const config = {
             instrument: instrument,
